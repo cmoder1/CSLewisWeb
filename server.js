@@ -37,6 +37,10 @@ app.get('/contact.html', function(req, res) {
     res.sendfile('html/contact.html', {root: __dirname })
 });
 
+app.get('/games.html', function(req, res) {
+    res.sendfile('html/games.html', {root: __dirname })
+});
+
 app.get('*', function(req, res) {
     res.sendfile('html/index.html', {root: __dirname })
 });

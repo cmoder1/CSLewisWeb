@@ -192,3 +192,86 @@ footer p {
         clear: both;
     }
 }
+
+/*
+MY ADDITIONS
+*/
+
+#gameBox {
+    text-align: center;
+}
+
+#phraseBox {
+    height: auto;
+    background-color: rgba(240,95,64,1);
+    /*background-color: white;*/
+    padding: 30px;
+}
+.word {
+    display: inline-block;
+    padding: 10px 25px;
+}
+.letter {
+    width: 47px;
+    height: 47px;
+    background-color: rgb(150,150,150);
+    display: inline-block;
+    margin: 5px;
+}
+
+.beta {
+    margin: 2px 1px;
+    background-color: white;
+}
+.beta p {
+    color: black;
+}
+
+.letter p {
+    font-size: 33px;
+}
+.alpha {
+    cursor: pointer;
+}
+.unguessed:hover {
+    background-color: rgb(100,100,100);
+}
+.guessed {
+    background-color: rgb(80,80,80);
+    color: rgb(150,150,150);
+    opacity: 0.5;
+}
+#spinner {
+    margin-top: 25px;
+    display: inline-block;
+    padding: 0px 40px;
+    background-color: rgba(150,10,100,0.8);
+    background: red; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(rgb(100,100,100), rgb(180,180,180), rgb(100,100,100)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgb(100,100,100), rgb(180,180,180), rgb(100,100,100)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgb(100,100,100), rgb(180,180,180), rgb(100,100,100)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgb(100,100,100), rgb(180,180,180), rgb(100,100,100)); /* Standard syntax */
+}
+#spinButton {
+    color: black;
+    padding: 10px;
+    margin-top: 10px;
+}
+#points {
+    font-size: 40px;
+}
+
+
+#players{
+    margin-top: 10px;
+}
+.player {
+    margin-top: 25px;
+    height: 50px;
+    background-color: rgba(240,95,64,.9);
+    vertical-align: middle;
+}
+.score {
+    line-height: 50px;
+    font-size: 20pt;
+}
