@@ -52,7 +52,7 @@ function fillPanel() {
 	$('#phraseBox').html(newHTML);
 
 	var dim = 47;
-	var font = 33;
+	var font = 31;
 	var pad1 = 10;
 	var pad2 = 25;
 	while($('#phraseBox').height() > 300) {
