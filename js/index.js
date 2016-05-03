@@ -1,4 +1,6 @@
 var phrase = "";
+var source = "";
+
 var phrases = ["I'm on Aslan's side even if there isn't any Aslan to lead it",
 			   "it seems to me that the made-up things are a good deal better than the real ones",
 			   "No soul that seriously and constantly desires joy will ever miss it",
@@ -20,8 +22,7 @@ var phrases = ["I'm on Aslan's side even if there isn't any Aslan to lead it",
 			   "how cleverly you defend yourselves against all that might do you good",
 			   "All get what they want; they do not always like it",
 			   "People shouldn't call for demons unless they really mean what they say",
-			   "all find what they truly seek",
-			   ""];
+			   "all find what they truly seek"];
 var sources = ["The Silver Chair",
 			   "The Silver Chair",
 			   "The Great Divorce",
@@ -43,14 +44,31 @@ var sources = ["The Silver Chair",
 			   "The Magician's Nephew",
 			   "The Magician's Nephew",
 			   "The Last Battle",
-			   "The Last Battle",
-			   ""];
+			   "The Last Battle"];
 
 window.addEventListener('load', function(){
 	console.log('PAGE LOADED');
 
-	phrase = phrases[Math.floor(Math.random()*phrases.length)];//phrases[phrases.length-2];
+	newGame();
+
+	$('#guess').on('click', function() {
+		var guess = prompt('Guess the Quote:');
+		if (guess !== null && guess.toLowerCase() === phrase.toLowerCase()) {
+			revealAnswer();
+		}
+	});
+	$('#reveal').on('click', revealAnswer);
+	$('#newGame').on('click', newGame);
+
+	$('.alpha').toggleClass('unguessed');
+
+}, false);
+
+function newGame() {
+	var idx = Math.floor(Math.random()*phrases.length);
+	phrase = phrases[idx];//phrases[phrases.length-2];
 	phrase = phrase.toUpperCase();
+	source = sources[idx];
 	fillPanel();
 	
 	$('.alpha').on('click', function(e) {
@@ -59,13 +77,10 @@ window.addEventListener('load', function(){
 		$($(e.target).parent()).toggleClass('guessed');
 		revealGuess($(e.target).html());
 	});
-
-	$('.alpha').toggleClass('unguessed');
-
-}, false);
+}
 
 function fillPanel() {
-	var newHTML = "";
+	var newHTML = '<h2 class="intro-text text-center">'+source+'</h2>';
 	var words = phrase.split(" ");
 	for (var w=0; w<words.length; w++) {
 		newHTML += '<div id="word'+w+'" class="word">';
@@ -95,6 +110,13 @@ function fillPanel() {
 		$('.beta').css('width', dim+'px');
 		$('.beta p').css('font-size', font+'px');
 		$('.word').css('padding', pad1+'px '+pad2+'px');
+	}
+}
+
+function revealAnswer() {
+	var alphabet = 'abcdefghijklmnopqrstuvwxyz';
+	for (var i=0; i<alphabet.length; i++) {
+		revealGuess(alphabet[i].toUpperCase());
 	}
 }
 
