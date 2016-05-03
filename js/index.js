@@ -58,9 +58,7 @@ window.addEventListener('load', function(){
 		}
 	});
 	$('#reveal').on('click', revealAnswer);
-	$('#newGame').on('click', newGame);
-
-	$('.alpha').toggleClass('unguessed');
+	$('#newGame').on('click', function() {newGame(); newGame();});
 
 }, false);
 
@@ -77,6 +75,10 @@ function newGame() {
 		$($(e.target).parent()).toggleClass('guessed');
 		revealGuess($(e.target).html());
 	});
+
+	$('.unguessed').toggleClass('unguessed');
+	$('.guessed').toggleClass('guessed');
+	$('.alpha').toggleClass('unguessed');
 }
 
 function fillPanel() {
