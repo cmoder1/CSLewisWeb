@@ -61,7 +61,7 @@ window.addEventListener('load', function(){
 		}
 	});
 	$('#reveal').on('click', revealAnswer);
-	$('#newGame').on('click', function() {newGame(); newGame();});
+	$('#newGame').on('click', function() {newGame(false); newGame(true);});
 
 	$('.score').on('click', function(e) {
 		//var pts = $(e.target).val()*1;
@@ -71,7 +71,7 @@ window.addEventListener('load', function(){
 
 }, false);
 
-function newGame() {
+function newGame(real) {
 	if (phrases.length === 0) {
 		phrases = phrases_original;
 		sources = sources_original;
@@ -82,8 +82,10 @@ function newGame() {
 	phrase = phrase.toUpperCase();
 	source = sources[idx];
 
-	phrases.splice(idx,1);
-	sources.splice(idx,1);
+	if (real) {
+		phrases.splice(idx,1);
+		sources.splice(idx,1);
+	}
 
 	fillPanel();
 	
