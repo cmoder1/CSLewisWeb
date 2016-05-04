@@ -23,6 +23,8 @@ var phrases = ["I'm on Aslan's side even if there isn't any Aslan to lead it",
 			   "All get what they want; they do not always like it",
 			   "People shouldn't call for demons unless they really mean what they say",
 			   "all find what they truly seek"];
+var phrases_original = phrases;
+
 var sources = ["The Silver Chair",
 			   "The Silver Chair",
 			   "The Great Divorce",
@@ -45,6 +47,7 @@ var sources = ["The Silver Chair",
 			   "The Magician's Nephew",
 			   "The Last Battle",
 			   "The Last Battle"];
+var sources_original = sources;
 
 window.addEventListener('load', function(){
 	console.log('PAGE LOADED');
@@ -69,6 +72,11 @@ window.addEventListener('load', function(){
 }, false);
 
 function newGame() {
+	if (phrases.length === 0) {
+		phrases = phrases_original;
+		sources = sources_original;
+	}
+
 	var idx = Math.floor(Math.random()*phrases.length);
 	phrase = phrases[idx];//phrases[phrases.length-2];
 	phrase = phrase.toUpperCase();
