@@ -74,8 +74,8 @@ function newGame() {
 	phrase = phrase.toUpperCase();
 	source = sources[idx];
 
-	phrase.splice(idx,1);
-	source.splice(idx,1);
+	phrases.splice(idx,1);
+	sources.splice(idx,1);
 
 	fillPanel();
 	
