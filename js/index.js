@@ -4,13 +4,13 @@ var source = "";
 var phrases = ["I'm on Aslan's side even if there isn't any Aslan to lead it",
 			   "it seems to me that the made-up things are a good deal better than the real ones",
 			   "No soul that seriously and constantly desires joy will ever miss it",
-			   "There is no other day. All days are present now. This moment contains all moments.",
+			   //"There is no other day. All days are present now. This moment contains all moments.",
 			   "No one ever told me that grief felt so like fear",
-			   "little flakes of me, my impressions, my selections, are settling down on the image of her",
+			   //"little flakes of me, my impressions, my selections, are settling down on the image of her",
 			   "If my house has collapsed at one blow, that is because it was a house of cards",
 			   "The best is perhaps what we understand the least",
 			   "the safest road to Hell is the gradual one",
-			   "Gratitude looks to the Past and love to the Present; fear, avarice, lust, and ambition look ahead",
+			   //"Gratitude looks to the Past and love to the Present; fear, avarice, lust, and ambition look ahead",
 			   "the Present is the point at which time touches eternity",
 			   "Suspicion often creates what it suspects",
 			   "the Past is frozen and no longer flows, and the Present is all lit up with eternal rays",
@@ -26,13 +26,13 @@ var phrases = ["I'm on Aslan's side even if there isn't any Aslan to lead it",
 var sources = ["The Silver Chair",
 			   "The Silver Chair",
 			   "The Great Divorce",
-			   "The Great Divorce",
+			   //"The Great Divorce",
 			   "A Grief Observed",
-			   "A Grief Observed",
+			   //"A Grief Observed",
 			   "A Grief Observed",
 			   "A Grief Observed",
 			   "The Screwtape Letters",
-			   "The Screwtape Letters",
+			   //"The Screwtape Letters",
 			   "The Screwtape Letters",
 			   "The Screwtape Letters",
 			   "The Screwtape Letters",
@@ -73,6 +73,10 @@ function newGame() {
 	phrase = phrases[idx];//phrases[phrases.length-2];
 	phrase = phrase.toUpperCase();
 	source = sources[idx];
+
+	phrase.splice(idx,1);
+	source.splice(idx,1);
+
 	fillPanel();
 	
 	$('.alpha').on('click', function(e) {
