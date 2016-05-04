@@ -60,6 +60,12 @@ window.addEventListener('load', function(){
 	$('#reveal').on('click', revealAnswer);
 	$('#newGame').on('click', function() {newGame(); newGame();});
 
+	$('.score').on('click', function(e) {
+		//var pts = $(e.target).val()*1;
+		//console.log(pts);
+		$(e.target).html(($(e.target).html()*1)+100);
+	});
+
 }, false);
 
 function newGame() {
