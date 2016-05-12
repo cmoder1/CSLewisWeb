@@ -33,6 +33,10 @@ app.get('/blog.html', function(req, res) {
     res.sendfile('html/blog.html', {root: __dirname })
 });
 
+app.get('/video.html', function(req, res) {
+    res.sendfile('html/video.html', {root: __dirname })
+});
+
 app.get('/fiction.html', function(req, res) {
     res.sendfile('html/fiction.html', {root: __dirname })
 });
