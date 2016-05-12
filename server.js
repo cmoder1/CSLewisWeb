@@ -37,8 +37,8 @@ app.get('/fiction.html', function(req, res) {
     res.sendfile('html/fiction.html', {root: __dirname })
 });
 
-app.get('/nonfiction.html', function(req, res) {
-    res.sendfile('html/nonfiction.html', {root: __dirname })
+app.get('/essays.html', function(req, res) {
+    res.sendfile('html/essays.html', {root: __dirname })
 });
 
 app.get('/contact.html', function(req, res) {
